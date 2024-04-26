@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_28_233159) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_05_222434) do
   create_table "debts", force: :cascade do |t|
     t.integer "person_id", null: false
     t.float "amount"
@@ -18,6 +18,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_233159) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_debts_on_person_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "person_id", null: false
+    t.float "amount"
+    t.date "paid_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_payments_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -44,5 +53,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_233159) do
   end
 
   add_foreign_key "debts", "people"
+  add_foreign_key "payments", "people"
   add_foreign_key "people", "users"
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+  resources :payments
   devise_for :users
 
   resources :debts, except: %i(edit update show)
@@ -16,5 +18,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "people#index"
+  root 'dashboard#index'
 end

@@ -32,7 +32,7 @@
       <th>Cadastrado em</th>
       <th>Cadastrado por</th>
       <th>Ativo</th>
-      <th>Débitos</th>
+      <th>Saldo</th>
       <th></th>
     </tr>
   </thead>
@@ -57,7 +57,7 @@
           <% end %>
         </td>
         <td class="text-end align-middle">
-          <%= person.total_debts %>
+          <%= person.balance %>
         </td>
         <td class="text-center align-middle">
           <div class="btn-group" role="group" aria-label="Actions">

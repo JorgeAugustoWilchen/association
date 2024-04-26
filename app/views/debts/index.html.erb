@@ -14,6 +14,7 @@
 
 <div id="debts">
 <div class="table-responsive">
+<%= will_paginate @debts %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -41,3 +42,5 @@
     </tbody>
   </table>
 </div>
+
+<%= will_paginate @debts %>
